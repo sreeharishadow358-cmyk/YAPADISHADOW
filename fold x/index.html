@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FoldX | Industrial Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">Fold<span>X</span></div>
+    <nav>
+      <a class="active">Dashboard</a>
+      <a>Live Machine Status</a>
+      <a>Production Analytics</a>
+      <a>Defect Reports</a>
+      <a>History</a>e
+      <a>Settings</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <h1>Dashboard</h1>
+      <div class="topbar-right">
+        <input type="date">
+        <div class="profile"></div>
+      </div>
+    </header>
+
+    <!-- KPI CARDS -->
+    <section class="kpis">
+      <div class="kpi">
+        <span class="label">Machine Status</span>
+        <h2 class="status running">RUNNING</h2>
+      </div>
+      <div class="kpi">
+        <span class="label">Today Working Hours</span>
+        <h2>7.6 hrs</h2>
+      </div>
+      <div class="kpi">
+        <span class="label">Today Production</span>
+        <h2>42 rolls</h2>
+      </div>
+      <div class="kpi">
+        <span class="label">Defects Detected</span>
+        <h2>3</h2>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section class="analytics">
+      <div class="chart-card">
+        <h3>Daily Machine Runtime</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Monthly Production</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+    </section>
+
+    <!-- TABLE + WIDGETS -->
+    <section class="bottom">
+      <div class="table-card">
+        <h3>Production & Defect Log</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Batch ID</th>
+              <th>Fabric Length</th>
+              <th>Defects</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12 Jun</td>
+              <td>FX-24061</td>
+              <td>120 m</td>
+              <td>1</td>
+              <td class="ok">OK</td>
+            </tr>
+            <tr>
+              <td>12 Jun</td>
+              <td>FX-24062</td>
+              <td>110 m</td>
+              <td>0</td>
+              <td class="ok">OK</td>
+            </tr>
+            <tr>
+              <td>12 Jun</td>
+              <td>FX-24063</td>
+              <td>95 m</td>
+              <td>2</td>
+              <td class="warn">CHECK</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="widgets">
+        <div class="widget">
+          <h4>Machine Utilization</h4>
+          <div class="circle">
+            <span>82%</span>
+          </div>
+        </div>
+
+        <div class="widget">
+          <h4>Alerts</h4>
+          <ul>
+            <li>Maintenance due in 3 days</li>
+            <li>No active faults</li>
+          </ul>
+        </div>
+
+        <div class="widget small">
+          <span>Last Updated</span>
+          <strong>12 Jun 2026 · 14:32</strong>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
